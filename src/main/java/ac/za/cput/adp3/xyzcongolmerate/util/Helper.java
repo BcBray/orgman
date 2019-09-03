@@ -1,5 +1,11 @@
 package ac.za.cput.adp3.xyzcongolmerate.util;
 
+import ac.za.cput.adp3.xyzcongolmerate.domain.demography.Gender;
+import ac.za.cput.adp3.xyzcongolmerate.domain.demography.Race;
+import ac.za.cput.adp3.xyzcongolmerate.domain.misc.Role;
+import ac.za.cput.adp3.xyzcongolmerate.domain.org.Organisation;
+import ac.za.cput.adp3.xyzcongolmerate.domain.user.User;
+
 import java.util.UUID;
 
 public class Helper {
@@ -13,14 +19,26 @@ public class Helper {
     }
 
     public static String getSuffixFromClassName(Class<?> aClass) {
+        /*
         String className = getClassName(aClass);
-        throw new UnsupportedOperationException("Not yet supported!");
-        /**
-         * Your implementation goes here
-         *
-         * INSTRUCTION
-         * 1. Remove line 17 [throw new UnsupportedOperationException("Not yet supported!");]
-         * 2. Get the capitalized letter(s) from the className and return it.
-         */
+        getClassName(Gender.class);
+        getClassName(Race.class);
+        getClassName(Role.class);
+        getClassName(Organisation.class);
+        getClassName(User.class);
+*/
+        String compare = "";
+        String compareName = getClassName(aClass);
+        int setL = compareName.length();
+
+        for(int i = 0; i < setL; i++)
+        {
+            if(Character.isUpperCase(compareName.charAt(i)))
+            {
+                char word = compareName.charAt(i);
+                compare = compare += word;
+            }
+        }
+        return compare;
     }
 }
